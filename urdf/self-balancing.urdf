@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="self-balancing">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.055293 -0.08692 0.07539"
+        rpy="0 0 0" />
+      <mass
+        value="0.28151" />
+      <inertia
+        ixx="0.00015759"
+        ixy="4.101E-08"
+        ixz="-3.4429E-07"
+        iyy="0.0005263"
+        iyz="4.1853E-09"
+        izz="0.00044124" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://self-balancing/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://self-balancing/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_link">
+    <inertial>
+      <origin
+        xyz="2.6819E-06 -5.5483E-09 0.0060012"
+        rpy="0 0 0" />
+      <mass
+        value="0.023985" />
+      <inertia
+        ixx="8.3512E-06"
+        ixy="-3.5545E-13"
+        ixz="-6.1081E-11"
+        iyy="8.3506E-06"
+        iyz="-3.3731E-13"
+        izz="1.6278E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://self-balancing/meshes/left_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25098 0.25098 0.25098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://self-balancing/meshes/left_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_joint"
+    type="revolute">
+    <origin
+      xyz="0.13666 -0.086877 0.039775"
+      rpy="-1.5708 0.99328 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_link">
+    <inertial>
+      <origin
+        xyz="2.6819E-06 -5.5483E-09 -0.0059988"
+        rpy="0 0 0" />
+      <mass
+        value="0.023985" />
+      <inertia
+        ixx="8.3512E-06"
+        ixy="-3.5545E-13"
+        ixz="-6.1081E-11"
+        iyy="8.3506E-06"
+        iyz="-3.3731E-13"
+        izz="1.6278E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://self-balancing/meshes/right_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25098 0.25098 0.25098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://self-balancing/meshes/right_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_link"
+    type="revolute">
+    <origin
+      xyz="-0.026342 -0.086877 0.039775"
+      rpy="-1.5708 0.99328 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>
